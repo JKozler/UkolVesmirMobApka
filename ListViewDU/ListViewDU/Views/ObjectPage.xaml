@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry Placeholder="Name" HorizontalOptions="CenterAndExpand" x:Name="nameTxt"></Entry>
-            <Entry Placeholder="Age (in mil. years)" HorizontalOptions="CenterAndExpand" x:Name="ageTxt"></Entry>
+            <Entry Placeholder="Age" HorizontalOptions="CenterAndExpand" x:Name="ageTxt"></Entry>
             <Picker Title="Typ" HorizontalOptions="CenterAndExpand" x:Name="typeObject"></Picker>
 
             <Button Text="Odeslat" VerticalOptions="End" x:Name="Submit" Clicked="Submit_Clicked"></Button>
