@@ -6,6 +6,7 @@
     <ListView x:Name="MyListView"
             ItemsSource="{Binding AllObjects}"
             ItemTapped="Handle_ItemTapped"
+            Margin="5,10"
             CachingStrategy="RecycleElement" BackgroundColor="DimGray">
 
 
@@ -14,8 +15,8 @@
                 <ViewCell>
                     <StackLayout>
                         <Label Text="{Binding Name}" TextColor="Aqua" />
+                        <Label Text="{Binding Species}" TextColor="Aqua"/>
                         <Label Text="{Binding Age}" TextColor="Aqua"/>
-                        <Label Text="{Binding Species, StringFormat='{0:N0} let'}" TextColor="Aqua"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
