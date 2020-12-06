@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewDU.Views.ObjectListPage"
+             BackgroundColor="DimGray">
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding AllObjects}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement" BackgroundColor="DimGray">
+
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Name}" TextColor="Aqua" />
+                        <Label Text="{Binding Age}" TextColor="Aqua"/>
+                        <Label Text="{Binding Species, StringFormat='{0:N0} let'}" TextColor="Aqua"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
