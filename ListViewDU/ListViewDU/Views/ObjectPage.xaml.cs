@@ -64,10 +64,11 @@ namespace ListViewDU.Views
     public partial class ObjectPage : ContentPage
     {
         ObservableCollection<Telesa> cCollection;
-        public ObjectPage()
+        public ObjectPage(ObservableCollection<Telesa> telesas)
         {
             InitializeComponent();
             LoadValuesToPicker();
+            cCollection = telesas;
         }
 
         public ObjectPage(Telesa tl, ObservableCollection<Telesa> telesas)

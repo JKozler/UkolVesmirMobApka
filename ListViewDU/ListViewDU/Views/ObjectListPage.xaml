@@ -2,23 +2,62 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ListViewDU.Views.ObjectListPage"
-             BackgroundColor="DimGray">
+             BackgroundColor="LightGray">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Select item" Grid.Column="0" TextColor="White" FontSize="30"></Label>
+                <Button x:Name="AddNew"
+                    Clicked="AddNew_Clicked"
+                    WidthRequest="40"
+                    Margin="0,0,10,0"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    HeightRequest="40"
+                    CornerRadius="20"
+                    BorderWidth="2"
+                    BorderColor="Gray"
+                    Text="+"/>
+            </Grid>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ListView x:Name="MyListView"
             ItemsSource="{Binding AllObjects}"
             ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement" BackgroundColor="DimGray">
-
+            CachingStrategy="RecycleElement" BackgroundColor="LightGray">
 
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <StackLayout>
-                        <Label Text="{Binding Name}" TextColor="Aqua" Style="{DynamicResource LargeLabel}"/>
-                        <Label Text="{Binding Species}" TextColor="Aqua" Style="{DynamicResource SmallLabel}"/>
-                        <Label Text="{Binding Age}" TextColor="Aqua" Style="{DynamicResource ListItemTextStyle}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Name}" HorizontalTextAlignment="Center" Grid.Column="0" TextColor="Black" Style="{DynamicResource LargeLabel}"/>
+                            <Label Text="{Binding Species}" HorizontalTextAlignment="Center" Grid.Column="1" TextColor="Black" Style="{DynamicResource SmallLabel}"/>
+                            <Label Text="{Binding Age}" HorizontalTextAlignment="Center" Grid.Column="2" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
+                        </Grid>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="Button_Round"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    CornerRadius="20"
+                    BorderWidth="2"
+                    BorderColor="Gray"
+                    Text="+"/>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

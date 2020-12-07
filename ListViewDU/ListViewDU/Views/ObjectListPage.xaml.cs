@@ -33,5 +33,12 @@ namespace ListViewDU.Views
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
+
+        async void AddNew_Clicked(object sender, EventArgs e)
+        {
+            Page p = new ObjectPage((BindingContext as CurrentObjects).AllObjects);
+            NavigationPage np = new NavigationPage(p);
+            await Application.Current.MainPage.Navigation.PushAsync(np);
+        }
     }
 }
